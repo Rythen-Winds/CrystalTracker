@@ -29,11 +29,11 @@ const Router = () => {
 
   const routesForAuthenticatedOnly: RouteObject[] = [
     {
-      path: '/',
+      path: '/CrystalTracker/',
       element: <ProtectedRoute />,
       children: [
         {
-          path: '/',
+          path: '/CrystalTracker/',
           element: <UserHomePage />,
         },
         { path: 'new', element: <CreatePage />, action: createAction },
@@ -54,7 +54,7 @@ const Router = () => {
 
   const routesForNotAuthenticatedOnly: RouteObject[] = [
     {
-      path: '/',
+      path: '/CrystalTracker/',
       element: <HomePage />,
     },
     {
