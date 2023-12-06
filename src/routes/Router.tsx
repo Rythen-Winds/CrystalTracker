@@ -20,7 +20,7 @@ const Router = () => {
   const { isAuthenticated } = useAuth();
   const routesForPublic: RouteObject[] = [
     {
-      path: 'crystal/:crystalId',
+      path: '/crystal/:crystalId',
       element: <CrystalPage />,
       loader: crystalLoader,
       errorElement: <ErrorPage />,
@@ -36,15 +36,15 @@ const Router = () => {
           path: '/CrystalTracker/',
           element: <UserHomePage />,
         },
-        { path: 'new', element: <CreatePage />, action: createAction },
+        { path: '/new', element: <CreatePage />, action: createAction },
 
         {
-          path: 'crystal/:crystalId/edit',
+          path: '/crystal/:crystalId/edit',
           element: <EditPage />,
           loader: crystalLoader,
         },
         {
-          path: 'crystal/:crystalId/delete',
+          path: '/crystal/:crystalId/delete',
           action: DeleteAction,
           element: <div>Deleting</div>,
         },
@@ -58,7 +58,7 @@ const Router = () => {
       element: <HomePage />,
     },
     {
-      path: 'login',
+      path: '/login',
       element: <LoginPage />,
       errorElement: <ErrorPage />,
     },
