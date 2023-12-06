@@ -66,7 +66,7 @@ const Router = () => {
 
   const router = createBrowserRouter([
     {
-      path: '/',
+      path: '/CrystalTracker/',
       element: <Root />,
       errorElement: <ErrorPage />,
       loader: RootLoader,
