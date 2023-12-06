@@ -5,7 +5,7 @@ const ProtectedRoute = () => {
   const { isAuthenticated } = useAuth();
 
   if (!isAuthenticated) {
-    return <Navigate to='/login' />;
+    return <Navigate to='/CrystalTracker/login' />;
   }
   return <Outlet />;
 };

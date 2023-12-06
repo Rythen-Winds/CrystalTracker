@@ -76,7 +76,7 @@ export default function Root() {
                     className='flex px-8'
                   >
                     <Link
-                      to={`crystal/${crystal.id}`}
+                      to={`CrystalTracker/crystal/${crystal.id}`}
                       className='px-8 py-2 w-full rounded-lg hover:bg-opacity-80 hover:bg-accent'
                     >
                       {<>{crystal.name}</>} {crystal.favorite && <span>★</span>}
