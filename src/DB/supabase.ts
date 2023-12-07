@@ -36,8 +36,12 @@ export async function logout() {
 }
 
 export async function getCrystals(filter: string | null) {
-  let query = supabase.from('Crystal').select('*').ilike('name', `%${filter}%`);
+  let query = supabase.from('Crystal').select('*');
+  //
 
+  if (!!filter) {
+    query = query.ilike('name', `%${filter}%`);
+  }
   const { data, error } = await query;
 
   if (error) {

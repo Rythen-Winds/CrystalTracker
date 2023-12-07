@@ -54,29 +54,32 @@ const Router = () => {
 
   const routesForNotAuthenticatedOnly: RouteObject[] = [
     {
-      path: 'CrystalTracker',
+      path: '/',
       element: <HomePage />,
     },
     {
-      path: '/login',
+      path: 'login',
       element: <LoginPage />,
       errorElement: <ErrorPage />,
     },
   ];
 
-  const router = createBrowserRouter([
-    {
-      path: 'CrystalTracker',
-      element: <Root />,
-      errorElement: <ErrorPage />,
-      loader: RootLoader,
-      children: [
-        ...routesForPublic,
-        ...(!isAuthenticated ? routesForNotAuthenticatedOnly : []),
-        ...routesForAuthenticatedOnly,
-      ],
-    },
-  ]);
+  const router = createBrowserRouter(
+    [
+      {
+        path: '/',
+        element: <Root />,
+        errorElement: <ErrorPage />,
+        loader: RootLoader,
+        children: [
+          ...routesForPublic,
+          ...(!isAuthenticated ? routesForNotAuthenticatedOnly : []),
+          ...routesForAuthenticatedOnly,
+        ],
+      },
+    ],
+    { basename: '/CrystalTracker/' }
+  );
 
   return <RouterProvider router={router} />;
 };

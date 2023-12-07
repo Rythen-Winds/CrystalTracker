@@ -8,7 +8,7 @@ const HomePage = () => {
       className='flex h-full justify-center items-center'
     >
       <button
-        onClick={() => navigate('/CrystalTracker/login')}
+        onClick={() => navigate('/login')}
         type='button'
       >
         Login
