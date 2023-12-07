@@ -54,11 +54,11 @@ const Router = () => {
 
   const routesForNotAuthenticatedOnly: RouteObject[] = [
     {
-      path: '/',
+      path: 'CrystalTracker',
       element: <HomePage />,
     },
     {
-      path: 'login',
+      path: '/login',
       element: <LoginPage />,
       errorElement: <ErrorPage />,
     },
