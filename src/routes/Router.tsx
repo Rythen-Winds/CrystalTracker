@@ -20,7 +20,7 @@ const Router = () => {
   const { isAuthenticated } = useAuth();
   const routesForPublic: RouteObject[] = [
     {
-      path: '*/crystal/:crystalId',
+      path: 'crystal/:crystalId',
       element: <CrystalPage />,
       loader: crystalLoader,
       errorElement: <ErrorPage />,
@@ -29,22 +29,22 @@ const Router = () => {
 
   const routesForAuthenticatedOnly: RouteObject[] = [
     {
-      path: '/CrystalTracker/',
+      path: '/',
       element: <ProtectedRoute />,
       children: [
         {
-          path: '/CrystalTracker/',
+          path: '/',
           element: <UserHomePage />,
         },
-        { path: '*/new', element: <CreatePage />, action: createAction },
+        { path: 'new', element: <CreatePage />, action: createAction },
 
         {
-          path: '*/crystal/:crystalId/edit',
+          path: 'crystal/:crystalId/edit',
           element: <EditPage />,
           loader: crystalLoader,
         },
         {
-          path: '*/crystal/:crystalId/delete',
+          path: 'crystal/:crystalId/delete',
           action: DeleteAction,
           element: <div>Deleting</div>,
         },
@@ -54,11 +54,11 @@ const Router = () => {
 
   const routesForNotAuthenticatedOnly: RouteObject[] = [
     {
-      path: '/CrystalTracker/',
+      path: '/',
       element: <HomePage />,
     },
     {
-      path: '*/login',
+      path: 'login',
       element: <LoginPage />,
       errorElement: <ErrorPage />,
     },
@@ -66,7 +66,7 @@ const Router = () => {
 
   const router = createBrowserRouter([
     {
-      path: '/CrystalTracker/',
+      path: 'CrystalTracker',
       element: <Root />,
       errorElement: <ErrorPage />,
       loader: RootLoader,
